@@ -119,10 +119,11 @@ async function metaUploadParams(searchParams, event) {
         }
       },
       "ExpressionAttributeNames": {
-        "#nameAttr": "name"
+        "#nameAttr": "name",
+        "#dataAttr": "data"
       },
       "KeyConditionExpression": "#nameAttr = :v1",
-      "ProjectionExpression": "cid",
+      "ProjectionExpression": "cid, #dataAttr",
       "TableName": tableName
     };
 
